@@ -16,6 +16,7 @@ function M.setup()
   else
     vim.notify("Successfully installed 'lexical'!", vim.log.levels.INFO)
   end
+    vim.keymap.set('n', '<leader>d', M.lookup_word_under_cursor, { desc = 'Lookup word definition with lexical' })
 end
 
 -- Start the lexical process if not already running
@@ -86,6 +87,3 @@ function M.lookup_word_under_cursor()
 end
 
 return M
-
--- Call setup when plugin is loaded
-M.setup()
